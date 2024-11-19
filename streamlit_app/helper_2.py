@@ -1,4 +1,3 @@
-
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from newsapi import NewsApiClient
@@ -27,28 +26,6 @@ def fetch_news_data(company_name, num_articles=5):
 
     return articles_data
 
-# company_name = "Adani"
-# num_articles = 5
-# news_data = fetch_news_data(company_name, num_articles)
-
-# # Print the fetched news data
-# for idx, article in enumerate(news_data, start=1):
-#     print(f"Article {idx}:")
-#     print("Source:", article['source'])
-#     print("Title:", article['title'])
-#     print("Description:", article['description'])
-#     print("Content:", article['content'])
-#     print()
-
-
-
-
-
-# model_name = "distilbert-base-uncased-finetuned-sst-2-english"  # Example model
-# tokenizer = AutoTokenizer.from_pretrained(model_name)
-# model = AutoModelForSequenceClassification.from_pretrained(model_name)
-
-
 def predict_sentiment(articles_data, model,tokenizer):
     sentiment_scores = []
     
@@ -59,7 +36,6 @@ def predict_sentiment(articles_data, model,tokenizer):
         
         with torch.no_grad():
             outputs = model(**inputs)
-#         print(outputs.logits)
         predicted_label = torch.argmax(outputs.logits).item()
         print(predicted_label)
         
@@ -71,13 +47,6 @@ def predict_sentiment(articles_data, model,tokenizer):
     else:
         return None
     
-# average_sentiment = predict_sentiment(news_data)
-
-# if average_sentiment is not None:
-#     print("Average Sentiment: ", average_sentiment)
-# else:
-#     print("No articles found.")
-
 
 
 

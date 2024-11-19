@@ -199,12 +199,6 @@ def generate_stock_prediction(stock_ticker):
             dynamic=True,
         )
 
-        # print(test_df)
-        # print("###########")
-        # print(train_df)
-        # print("###########")
-        # print(predictions)
-
         # Return the required data
         return train_df, test_df, forecast, predictions
 
