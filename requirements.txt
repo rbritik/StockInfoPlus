@@ -8,3 +8,8 @@ seaborn==0.13.2
 statsmodels==0.14.2
 streamlit==1.33.0
 yfinance==0.2.38
+newsapi-python==0.2.7
+ta==0.11.0
+torch==2.0.0
+transformers==4.29.2
+scikit-learn==1.2.2
